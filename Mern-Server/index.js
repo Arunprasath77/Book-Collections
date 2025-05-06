@@ -22,7 +22,7 @@ const client = new MongoClient(uri, {
     strict: true,
     deprecationErrors: true,
   }
-});
+});``
 
 async function run() {
   try {
@@ -111,3 +111,41 @@ run().catch(console.dir);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+
+
+
+// -------------------------------------------------------------------------Backend Setup (Order API)
+
+
+// // backend/routes/order.js
+// const express = require('express');
+// // const router = express.Router();
+
+// let orders = [];
+
+// router.post('/place-order', (req, res) => {
+//     const { _id, bookTitle } = req.body;
+//     const order = {
+//         orderId: Date.now(),
+//         bookTitle,
+//         bookId: _id,
+//         status: "Paid"
+//     };
+//     orders.push(order);
+//     res.status(201).json({ message: "Order placed successfully", order });
+// });
+
+// router.get('/orders', (req, res) => {
+//     res.json(orders);
+// });
+
+// module.exports = router;
+
+
+
+// await fetch('http://localhost:5000/place-order', {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify({ _id, bookTitle }),
+// });
